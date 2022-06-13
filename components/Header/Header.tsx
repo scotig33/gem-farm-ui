@@ -17,7 +17,7 @@ const Header = ({ farmId, setFarmId }: Props) => {
   return (
     <Flex
       sx={{
-        position: "sticky",
+        position: "static",
         top: 0,
         zIndex: 9,
         background: (theme) => theme.colors?.backgroundGradient,
@@ -34,23 +34,30 @@ const Header = ({ farmId, setFarmId }: Props) => {
           p=".8rem"
         >
           <Link href="/" passHref>
-            <Flex as="a" sx={{ alignItems: "center", flexDirection: "column" }}>
+            <Flex as="a" sx={{ alignItems: "center", flexDirection: "row" }}>
               <Flex sx={{ alignItems: "center" }}>
-                <Text as="h1" variant="headingSpecial" ml=".4rem">
-                  GEM
-                </Text>
-
-                <img
+              <img
                   sx={{
                     maxHeight: "4.8rem",
                   }}
-                  src="/images/gemtransparent.gif"
+                  src="/images/download_3_256x256.png"
                   alt="Gemworks"
                 />
+               
+               
+               
+                <Text as="h1" variant="headingSpecial" ml="2.5rem">
+                Klubhouse Staking
+                </Text>
+
+
 
                 <Text as="h1" variant="headingSpecial" ml=".4rem">
-                  FARM
+                  
                 </Text>
+
+
+
               </Flex>
               {/* <Text
                 sx={{
@@ -62,15 +69,6 @@ const Header = ({ farmId, setFarmId }: Props) => {
               </Text> */}
             </Flex>
           </Link>
-          <Text
-            variant="small"
-            sx={{
-              marginRight: "auto",
-            }}
-          >
-            &nbsp;&nbsp;&nbsp;&#8226;&nbsp;
-            {process.env.NEXT_PUBLIC_CONNECTION_NETWORK}
-          </Text>
 
           <Flex
             as="nav"

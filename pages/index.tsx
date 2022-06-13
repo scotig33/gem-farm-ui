@@ -11,6 +11,7 @@ import Header from "@/components/Header/Header"
 import { LoadingIcon } from "@/components/icons/LoadingIcon"
 import { useState } from "react"
 
+
 const StakePage = () => {
   const [farmId, setFarmId] = useState(process.env.NEXT_PUBLIC_GEMFARM_ID || "")
 
@@ -52,7 +53,8 @@ const StakePage = () => {
       >
         <Heading>Your staking account</Heading>
         <Text>Below you can stake, unstake and collect rewards.</Text>
-
+        <Text>Koalas: JBa21LE7K3aSpe7dyYvSzVFXy5hiUCNjMx2gniXtEKk9</Text>
+        <Text> Koalettes: (Coming Soon)</Text>
         {!publicKey ? (
           /** Render nothing if there is no wallet connected. */
           <Text
@@ -79,7 +81,7 @@ const StakePage = () => {
             }}
             onClick={handleInitStakingButtonClick}
           >
-            Init staking account
+            Create Staking Account
           </Button>
         ) : (
           <>
@@ -100,33 +102,11 @@ const StakePage = () => {
                       justifyContent: "center",
                     }}
                   >
-                    <img
-                      sx={{
-                        maxHeight: "2.4rem",
-                      }}
-                      src="images/gemtransparent.gif"
-                    />
                     <Text>
                       NFTs staked:&nbsp;
                       {farmerAccount?.gemsStaked.toNumber()}
                     </Text>
                   </Flex>
-                  <Text
-                    sx={{
-                      textAlign: "center",
-                    }}
-                  >
-                    Vault state: <b>{isLocked ? "locked" : "unlocked"}</b>
-                    <br />
-                  </Text>
-                  <Text
-                    sx={{
-                      textAlign: "center",
-                    }}
-                  >
-                    Account status: <b>{farmerStatus}</b>
-                    <br />
-                  </Text>
                 </Flex>
 
                 <Flex
@@ -174,7 +154,7 @@ const StakePage = () => {
                         margin: "0 .4rem 0 .8rem",
                         maxHeight: "2.4rem",
                       }}
-                      src="images/icon-list-item.png"
+                      src="images/1unnamed.png"
                     />
                     {availableA ? (
                       <b>{(availableA / 1000000000).toFixed(2)}</b>
@@ -214,8 +194,8 @@ const StakePage = () => {
               }}
             >
               <TabList>
-                <Tab>Your wallet</Tab>
-                <Tab>Your vault</Tab>
+                <Tab>Wallet</Tab>
+                <Tab>Vault</Tab>
               </TabList>
 
               <TabPanel>

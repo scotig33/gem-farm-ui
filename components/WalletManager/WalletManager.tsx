@@ -62,18 +62,21 @@ const WalletManager = () => {
               backgroundColor: "unset",
               color: "heading",
               lineHeight: "body",
-              fontSize: "1.4rem",
-              padding: ".8rem 1.6rem",
-              height: "unset",
+              fontSize: "1rem",
+              padding: ".8rem .8rem",
+              height: ".2",
               alignSelf: "flex-end",
               display: "flex",
-              background: (theme) => theme.colors?.primaryGradient,
+              background: "transparent",
               border: ".2rem solid transparent",
               transition: "all .125s linear",
               alignItems: "center",
               borderColor: "primary",
               opacity: 1,
               fontWeight: 500,
+              fontFamily:
+      'PressStart2P-Regular, monospace, AvertaStd-Bold, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+      
 
               "&:not(:disabled):hover": {
                 bg: "background",

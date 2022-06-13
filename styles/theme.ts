@@ -10,7 +10,7 @@ export const getGradient = (rgb: string) => {
    */
   const splitted = rgb.split(",").map((raw) => raw.replace(/\D/g, ""))
 
-  return `linear-gradient(225deg, ${rgb} 0%, rgba(${splitted[0]}, ${splitted[1]}, ${splitted[2]}, 0.7) 50%, rgba(${splitted[0]}, ${splitted[1]}, ${splitted[2]}, 0.5) 100%)`
+  return `linear-gradient(0deg, rgb(80,142,4) 0%, rgb(56,106,26) 50%, rgb(22,52,26) 100%)`
 }
 
 /**
@@ -22,13 +22,13 @@ export const getGradient = (rgb: string) => {
 const theme: Theme = {
   ...base,
   colors: {
-    background: "rgb(4, 4, 3)",
-    text: "rgb(226, 217, 211)",
-    primary: "rgb(48, 114, 180, .7)",
+    background: "transparent",
+    text: "rgb(255, 255, 255)",
+    primary: "rgb(255, 255, 255, .7)",
     primaryGradient: getGradient("rgb(48, 114, 180, .7)"),
-    heading: "rgb(226, 217, 211)",
+    heading: "rgb(255, 255, 255)",
     background2: "#1E1E24",
-    backgroundGradient: getGradient("rgb(4, 4, 3)"),
+    backgroundLinearGradient: getGradient("rgb(4, 4, 3)"),
     // modes: {
     //   light: {
     //     background: "rgb(226, 217, 211)",
@@ -45,7 +45,7 @@ const theme: Theme = {
   },
 
   sizes: {
-    container: "80rem",
+    container: "100rem",
   },
   config: {
     useLocalStorage: true,
@@ -53,14 +53,14 @@ const theme: Theme = {
 
   fonts: {
     heading:
-      'AvertaStd-Bold, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    'PressStart2P-Regular, monospace, AvertaStd-Bold, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
   },
 
   buttons: {
     primary: {
       display: "flex",
       color: "heading",
-      background: (theme) => theme.colors?.primaryGradient,
+      background: "transparent",
       border: "1px solid transparent",
       transition: "all .125s linear",
       alignItems: "center",
@@ -83,7 +83,7 @@ const theme: Theme = {
     secondary: {
       display: "flex",
       color: "heading",
-      background: (theme) => theme.colors?.backgroundGradient,
+      background: "transparent",
       border: "1px solid transparent",
       transition: "all .125s linear",
       alignItems: "center",
@@ -153,7 +153,7 @@ const theme: Theme = {
     },
   },
 
-  lineHeights: { body: 1.45 },
+  lineHeights: { body: 2.45 },
 
   text: {
     heading: {
@@ -161,7 +161,7 @@ const theme: Theme = {
       lineHeight: "body",
       fontSize: "2.2rem",
       fontFamily:
-        'AvertaStd-Bold, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+      'PressStart2P-Regular, monospace, AvertaStd-Bold, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
       fontWeight: 900,
     },
     headingSpecial: {
@@ -220,11 +220,11 @@ const theme: Theme = {
         /** Default text styles */
         fontSize: "1.4rem",
         fontFamily:
-          'AvertaStd-Regular, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-        lineHeight: 1.45,
+        'PressStart2P-Regular, monospace, AvertaStd-Bold, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+        lineHeight: 3,
         minHeight: "100vh",
         color: "text",
-        backgroundColor: "background",
+        background: "backgroundLinearGradient",
         transition: "all .125s linear",
       },
 
